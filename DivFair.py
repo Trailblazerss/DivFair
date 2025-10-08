@@ -193,7 +193,7 @@ class OnlineDoubleClipped(Abstract_Reranker):
         
         # Calculate final fairness metrics for display
         nonzero_groups = v_g[v_g > 1e-8]
-        self.delta = delta0  # Restore original delta 
+        self.delta = delta0
         if len(nonzero_groups) > 0:
             utility_minmax = np.min(nonzero_groups) / (np.max(nonzero_groups) + 1e-8)
             print(f"Final min-max group utility ratio: {utility_minmax:.4f}")
