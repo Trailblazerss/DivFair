@@ -186,7 +186,7 @@ class OnlineDoubleClipped(Abstract_Reranker):
             
             # Update dual variables: mu_g_{t+1} = max(0, mu_g_t - eta_t * g_g)
             eta_t = self.learning_rate / math.sqrt(item_num)
-            mu_g = np.maximum(0.0, mu_g - eta_t * g_g)
+            mu_g = np.maximum(0.0, mu_g - eta_t * g_g) 
            
         
         print(f"Optimization completed!")
