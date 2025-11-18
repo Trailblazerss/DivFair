@@ -1,0 +1,20 @@
+{
+   ###############the ranking score stored path for the post-processing##################
+   ##########If you do not have it, please run the in-processing stage, firstly############
+   # ranking_store_path: "2025-5-31_test",
+   ranking_store_path: "steam-base-mf",
+   #######################################################################################
+   dataset: "steam",
+
+   ##################Post-processing model and log path############################
+   fair-rank: True, ##if you want to run a fair-rank module on the base models, you should set the value as True
+   model: "DivFair",
+   log_name: "test_post",
+
+   #########################Evaluation parameters#########################################
+   topk: [5, 10, 20],
+   fairness_metrics: ['MinMaxRatio', "MMF", "GINI", "Entropy", "EF", "Coverage", "Coverage_with_threshold"],
+   fairness_type: "Utility", # ["Exposure", "Utility"], where Exposure only computes the exposure of item group while utility computes the ranking score of item groups
+   # learning_rate: 0.001,
+   #####################################################################################
+}
